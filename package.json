@@ -1,5 +1,6 @@
 {
   "name": "discord4node",
+  "description": "Module that allows you to interact with the Discord API",
   "version": "0.0.1-beta",
   "main": "src/index.js",
   "deprecated": false,
