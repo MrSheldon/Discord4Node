@@ -7,7 +7,6 @@ let prefix = '-';
 
 client.on('ready', () => {
     console.log('Bot is ready!')
-    client.setGame("this is a nice game")
 })
 
 client.on('message', (message) => {
