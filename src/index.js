@@ -29,31 +29,6 @@ class Discord4Node extends EventEmitter {
         this.user = null
     }
 
-    async setGame(newGame) {
-        if (!this.ws.connected) throw new Error(`Client isn't connected`);
-        if (!newGame) throw new Error(`Please provide a new game`)
-        var body = {};
-        body.presence = {
-            game: {
-                name: newGame,
-                type: 0
-            }
-        };
-        var headers = {
-            "content-type": "application/json",
-            'Authorization': `Bot ${this.options.token}`,
-        };
-        request({
-            uri: 'https://discordapp.com/api/users/@me',
-            body: body,
-            headers: headers,
-            method: 'POST',
-            json: true
-        }, function(err, res, body) {
-            if (err) throw new Error(err.message)
-        });
-    }
-
     async sendMessage(channelid, content) {
         if (!this.ws.connected) throw new Error(`Client isn't connected`);
         if (!channelid) throw new Error(`Please provide a channel ID`)
