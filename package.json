@@ -1,0 +1,26 @@
+{
+  "name": "discord4node",
+  "version": "0.0.1-beta",
+  "main": "src/index.js",
+  "deprecated": false,
+  "homepage": "https://discord4node.js.org",
+  "author": {
+    "name": "MrSheldon",
+    "email": "root@mrsheldon.me",
+    "url": "https://mrsheldon.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrSheldon/Discord4Node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MrSheldon/Discord4Node/issues"
+  },
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "events": "^3.0.0",
+    "phin": "^3.1.0",
+    "request": "^2.88.0",
+    "ws": "^6.1.0"
+  }
+}
