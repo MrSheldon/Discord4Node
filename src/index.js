@@ -1,8 +1,23 @@
 const EventEmitter = require('events');
 const ws = require('ws');
 const p = require('phin').promisified;
-const Store = require('./util/Store');
 const request = require('request');
+
+class Store extends Map {
+    constructor(...args) {
+        super(args);
+    }
+
+    map(callback) {
+        let output = new Store();
+        
+        this.forEach((key, value) => {
+            output.set(value, callback(key, value));
+        });
+
+        return output;
+    }
+}
 
 class Discord4Node extends EventEmitter {
     constructor(options = {}) {
